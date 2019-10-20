@@ -1,0 +1,246 @@
+﻿<div class="wrapper">
+    <header class="main-header">
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> <span style="color: darkgoldenrod;">Purchase Module</span></a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a id="toggle" href="#" class="sidebar-toggle" data-target="#nav-bar" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown messages-menu">
+                        <a style="cursor: pointer;" onclick="timeline(true);" class="dropdown-toggle" data-toggle="dropdown" title="Home">
+                            <i class="fa fa-home"></i>
+                            <span class="label label-default"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header">MAIN NAVIGATION</li>
+            </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 id="header">Suppliers</h1>
+            <ol class="breadcrumb">
+                <li class="active">Home</li>
+            </ol>
+        </section>
+        <div class="box-body" style="padding-top: 1.0em; display: block;" id="suppliers-home">
+            <div style="width: 100%; background-color: white; border-width: 1px; padding-left: 0.2em; font-size: 12px;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td style="width: 50%; text-align: left;" valign="top">
+                            <div class="login-box-body">
+                                <table style="padding-top: 0.5em; width: 100%;">
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 0.2em; padding-bottom: 0.2em; padding-top: 0.5em; font-size: 12px;">
+                                            <div id="div-supplier" style="display: block;">
+                                                <form id="fSuppliers">
+                                                    <div class="form-group has-feedback">
+                                                        <label>Supplier Name:</label>
+                                                        <input type="text" class="form-control" maxlength="50" placeholder="Supplier Name" title="Supplier Name" id="name" name="name" /> <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8">
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <button type="button" id="save-supplier-btn" class="btn btn-primary btn-block btn-flat">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 0.2em; padding-bottom: 0.2em; padding-top: 0.5em; font-size: 12px;">
+                                            <table id="supplier-items" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th id="supplier-header"><span><a onclick="getSuppliers();" style="cursor: pointer;" class="pull-right">Refresh</a></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="supplier-body"></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left; padding-top: 1.5em; padding-bottom: 0.3em;" valign="top"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="box-body" style="padding-top: 1.0em; display: none;" id="products-home">
+            <div style="width: 100%; background-color: white; border-width: 1px; padding-left: 0.2em; font-size: 12px;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td style="width: 50%; text-align: left;" valign="top">
+                            <div class="login-box-body">
+                                <table style="padding-top: 0.5em; width: 100%;">
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 0.2em; padding-bottom: 0.2em; padding-top: 0.5em; font-size: 12px;">
+                                            <div id="div-product" style="display: block;">
+                                                <form id="fProducts">
+                                                    <div class="form-group has-feedback">
+                                                        <input type="hidden" class="form-control" maxlength="50" id="supplierid" name="supplierid" />
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <label>Code:</label>
+                                                        <input type="text" class="form-control" maxlength="50" placeholder="Code" title="Code" id="code" name="code" /> <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <label>Description:</label>
+                                                        <input type="text" class="form-control" maxlength="50" placeholder="Description" title="Description" id="description" name="description" /> <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <label>Price:</label>
+                                                        <input type="number" class="form-control" maxlength="18" placeholder="Price" title="Price" id="price" name="price" /> <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8">
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <button type="button" id="close-product-btn" class="btn btn-primary btn-block btn-flat">Close</button>
+                                                            <button type="button" id="save-product-btn" class="btn btn-primary btn-block btn-flat pull-right">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 0.2em; padding-bottom: 0.2em; padding-top: 0.5em; font-size: 12px;">
+                                            <table id="product-items" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Code</th>
+                                                        <th>Description</th>
+                                                        <th>Price</th>
+                                                        <th id="product-header"><span><a style="cursor: pointer;" class="pull-right" id="get-products">Refresh</a></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="product-body"></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <div class="row" style="display: none;" id="complete-order">
+                                                <div class="col-xs-8">
+                                                    Total: R<span id="purchase-total">0</span><br />
+                                                    VAT: <b>14%</b>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <button type="button" id="cancel-order-btn" class="btn btn-primary btn-block btn-flat">Cancel</button>
+                                                    <button type="button" id="complete-order-btn" class="btn btn-primary btn-block btn-flat pull-right" disabled>Complete Order</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left; padding-top: 1.5em; padding-bottom: 0.3em;" valign="top"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="box-body" style="padding-top: 1.0em; display: none;" id="orders-home">
+            <div style="width: 100%; background-color: white; border-width: 1px; padding-left: 0.2em; font-size: 12px;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td style="width: 50%; text-align: left;" valign="top">
+                            <div class="login-box-body">
+                                <table style="padding-top: 0.5em; width: 100%;">
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 0.2em; padding-bottom: 0.2em; padding-top: 0.5em; font-size: 12px;">
+                                            <table id="orders-items" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Created</th>
+                                                        <th>Total</th>
+                                                        <th>VAT</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="orders-body"></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <div id="div-purchaseorders-items">
+                                                <table id="purchaseorders-items" class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Code</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="purchaseorders-body"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left; padding-top: 1.5em; padding-bottom: 0.3em;" valign="top"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-task">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"><i class="fa fa-envelope"></i> Order Status</h4>
+            </div>
+            <div class="modal-body" id="modal-task-pending">
+                <i class="glyphicon glyphicon-check"></i> Order has been created successfully
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
