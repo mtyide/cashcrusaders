@@ -1,4 +1,4 @@
 # cashcrusaders
  Cash Crusaders
  --------------------------------------------------------------------------------
- This project assessment makes use of Local SQL Server database (App_Data folder) with Entity Framework. See web configuration file for more details.
+ Bootstrap 4. Entity Framework 5.0 (Db-First). jQuery. HTML5. Web API. Build and run the project or see configuration file. This is a Purchase Order application with Suppliers, Products and Orders entry.
