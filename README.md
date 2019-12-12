@@ -1,5 +1,5 @@
-# PhonebookApplication
- Phonebook Application assessment (Technical) for interview purposes
+# Cash Crusaders
+ Technical assessment for interview purposes
 -------------------------------------------
 # Bootstrap
 Entity Framework 5.0 (Db-first). NET Core (MVC Razor). jQuery. HTML5. Web API
