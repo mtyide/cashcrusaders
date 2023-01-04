@@ -1,5 +1,5 @@
 # Cash Crusaders
- Technical assessment for interview purposes
+ Technical assessment for interview purposes (C# Assessment)
 -------------------------------------------
 # Bootstrap
 Entity Framework 5.0 (Db-first). NET Core (MVC Razor). jQuery. HTML5. Web API
